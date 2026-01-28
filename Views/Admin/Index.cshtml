@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<h2>Admin Dashboard</h2>
+
+<h3 class="mt-4">Recipes</h3>
+<table class="table table-hover">
+    <thead><tr><th>Title</th><th>Category</th><th>Reviews</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var r in ViewBag.Recipes)
+    {
+        <tr>
+            <td>@r.Title</td>
+            <td>@r.Category</td>
+            <td>@r.Reviews.Count</td>
+            <td>
+                <form asp-action="DeleteRecipe" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="@r.Id" />
+                    <button class="btn btn-sm btn-danger" onclick="return confirm('Delete recipe?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<h3 class="mt-5">Users</h3>
+<table class="table table-hover">
+    <thead><tr><th>Email</th><th>Email Confirmed</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var u in ViewBag.Users)
+    {
+        <tr>
+            <td>@u.Email</td>
+            <td>@u.EmailConfirmed</td>
+            <td>
+                <form asp-action="DeleteUser" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="@u.Id" />
+                    <button class="btn btn-sm btn-warning" onclick="return confirm('Delete user?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

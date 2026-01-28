@@ -1,0 +1,11 @@
+@model double
+@{
+    int full = (int)Model;
+    bool half = (Model - full) >= 0.5;
+}
+<span>
+    @for (int i = 0; i < full; i++)  { <i class="bi bi-star-fill text-warning"></i> }
+    @if (half)                      { <i class="bi bi-star-half text-warning"></i> }
+    @for (int i = full + (half?1:0); i < 5; i++) { <i class="bi bi-star text-warning"></i> }
+    <small class="text-muted ms-1">@Model.ToString("0.0")</small>
+</span>

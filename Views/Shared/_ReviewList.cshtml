@@ -1,0 +1,25 @@
+@model IEnumerable<CulinaryAdventures.Models.Review>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">No reviews yet – be the first!</p>
+}
+else
+{
+    <div class="list-group mb-4">
+        @foreach (var r in Model)
+        {
+            <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">@r.UserName</h6>
+                    <partial name="_StarRating" model="r.Rating" />
+                </div>
+                @if (!string.IsNullOrEmpty(r.Comment))
+                {
+                    <p class="mb-1">@r.Comment</p>
+                }
+                <small class="text-muted">@r.Created.ToString("g")</small>
+            </div>
+        }
+    </div>
+}

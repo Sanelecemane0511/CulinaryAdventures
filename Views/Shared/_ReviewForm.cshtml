@@ -1,0 +1,25 @@
+@model CulinaryAdventures.Models.Review
+<form asp-action="AddReview" asp-controller="Reviews" method="post" class="mb-4">
+    <input asp-for="RecipeId" type="hidden" />
+    <div class="row g-3">
+        <div class="col-auto">
+            <input asp-for="UserName" class="form-control" placeholder="Your name" required />
+        </div>
+        <div class="col-auto">
+            <select asp-for="Rating" class="form-select" required>
+                <option value="">Stars</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - OK</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-6">
+            <textarea asp-for="Comment" class="form-control" rows="2" placeholder="Optional comment"></textarea>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary">Post Review</button>
+        </div>
+    </div>
+</form>

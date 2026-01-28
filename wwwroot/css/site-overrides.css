@@ -1,0 +1,55 @@
+/* wwwroot/css/site-overrides.css */
+:root{
+    --sa-protea:#D63384;       /* pink accent */
+    --sa-spring:#006400;       /* deep green */
+    --sa-sunset:#FF8C00;       /* orange */
+    --sa-earth:#F5F5DC;        /* warm beige background */
+    --sa-charcoal:#222;        /* almost black text */
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--sa-earth);
+    color:var(--sa-charcoal);
+}
+
+/* navbar */
+.navbar-brand{
+    font-weight:700;
+    color:var(--sa-protea)!important;
+}
+.navbar{
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+/* buttons */
+.btn-primary{
+    background:var(--sa-spring);
+    border:0;
+    transition:all .2s;
+}
+.btn-primary:hover{
+    background:var(--sa-sunset);
+}
+
+/* cards */
+.card{
+    border:none;
+    border-radius:1rem;
+    overflow:hidden;
+    transition:transform .2s, box-shadow .2s;
+}
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 20px rgba(0,0,0,.1);
+}
+.card-img-top{
+    height:220px;
+    object-fit:cover;
+}
+.card-title{
+    font-weight:600;
+    color:var(--sa-spring);
+}
+

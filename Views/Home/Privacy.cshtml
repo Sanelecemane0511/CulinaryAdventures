@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<div class="container my-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <p><strong>Last updated:</strong> @DateTime.UtcNow.ToString("d MMMM yyyy")</p>
+
+    <h2>1. Introduction</h2>
+    <p>Culinary Adventures is a student project built for CTU Training Solutions – NCA522 Formative Assessment 2.  
+       The application runs on **localhost** during development and on **SmarterAsp.net** for demonstration purposes.  
+       We collect the **minimum** data needed to provide recipe sharing and rating features.</p>
+
+    <h2>2. What We Collect</h2>
+    <ul>
+        <li><strong>Account data:</strong> email address and password hash (ASP.NET Core Identity).</li>
+        <li><strong>Recipe content:</strong> title, ingredients, instructions, image URL, category, prep time – supplied by you.</li>
+        <li><strong>Reviews:</strong> star rating and optional comment – tied to your username.</li>
+        <li><strong>Technical logs:</strong> IP address and browser type (standard IIS / ASP.NET Core logging).</li>
+    </ul>
+
+    <h2>3. How We Store It</h2>
+    <ul>
+        <li><strong>Database:</strong> SQLite file on the hosting provider’s server – **not** transmitted to third parties.</li>
+        <li><strong>Cookies:</strong> authentication cookies (essential only); no tracking or marketing cookies.</li>
+        <li><strong>Images:</strong> recipe images are **local JPG files** inside `wwwroot/images/dishes` – no external hot-links.</li>
+    </ul>
+
+    <h2>4. What We Do NOT Collect</h2>
+    <ul>
+        <li>No payment, billing, or financial data.</li>
+        <li>No third-party analytics (Google, Facebook, etc.).</li>
+        <li>No geolocation or device fingerprinting.</li>
+    </ul>
+
+    <h2>5. Your Rights</h2>
+    <ul>
+        <li><strong>View / Edit:</strong> log in → “Edit Profile” or “Edit Recipe” to update your own content.</li>
+        <li><strong>Delete account:</strong> contact the student developer (email below) – we will delete your account and all associated recipes/reviews within 5 working days.</li>
+        <li><strong>Export:</strong> request a copy of your data – we will export your recipes & reviews as JSON/CSV.</li>
+    </ul>
+
+    <h2>6. Data Retention</h2>
+    <p>We keep your data **only while the project is live for assessment purposes**.  
+       After the final mark is released (November 2025) the database will be **archived for 30 days** then **permanently deleted** unless you request earlier removal.</p>
+
+    <h2>7. Security</h2>
+    <ul>
+        <li>Passwords are **hashed** using ASP.NET Core Identity (PBKDF2 + HMAC-SHA256).</li>
+        <li>HTTPS is enforced on the live demo site (SmarterAsp provides free SSL).</li>
+        <li>The SQLite file is **outside the web root** – not directly downloadable.</li>
+    </ul>
+
+    <h2>8. Contact</h2>
+    <p>For questions, deletion requests, or data exports please email:</p>
+    <p><strong>Student Developer:</strong> <a href="mailto:your-email@student.ctu.co.za">your-email@student.ctu.co.za</a></p>
+
+    <h2>9. Changes to This Notice</h2>
+    <p>Any updates will be posted here with a new “Last updated” date.  
+       Continued use of the site after changes constitutes acceptance.</p>
+</div>
